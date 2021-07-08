@@ -52,7 +52,7 @@ class ShoppingCart extends Component {
     hinhAnh: './img/meizuphone.jpg',
   };
 
-  changeDetail = (prodDetail) => {
+  changeProdDetail = (prodDetail) => {
     this.setState({
       prodDetail,
     });
@@ -67,11 +67,15 @@ class ShoppingCart extends Component {
             <button
               className='btn btn-danger '
               data-toggle='modal'
-              data-target='#modelId'>
+              data-target='#modelId'
+            >
               Giỏ hàng (0)
             </button>
           </div>
-          <ProductList prodList={this.prodList} />
+          <ProductList
+            prodList={this.prodList}
+            changeProdDetail={this.changeProdDetail}
+          />
           <ModalCart />
           <ProductDetail prodDetail={this.prodDetail} />
         </section>
